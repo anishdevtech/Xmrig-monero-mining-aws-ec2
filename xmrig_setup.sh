@@ -1,30 +1,24 @@
 #!/bin/bash
 
-# Update and upgrade packages
-apt update
-apt upgrade -y
+XMRRIG_DIR="$HOME/Downloads/xmrig-6.20.0"
+CONFIG_FILE="$HOME/.xmrig_config"
 
-# Install required packages
-apt install -y git wget proot build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev
+# Check if the config file exists, if not, prompt for values
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Welcome to xmrig setup!"
+    read -p "Enter your Monero wallet ID: " wallet_id
+    read -p "Enter the pool address (e.g., gulf.moneroocean.stream:10032): " pool_address
 
-# Clone the xmrig repository
-git clone https://github.com/xmrig/xmrig
+    # Save values to the config file
+    echo "WALLET_ID=$wallet_id" > "$CONFIG_FILE"
+    echo "POOL_ADDRESS=$pool_address" >> "$CONFIG_FILE"
+fi
+
+# Load values from the config file
+source "$CONFIG_FILE"
 
 # Navigate to the xmrig directory
-cd xmrig
-
-# Create a build directory and navigate to it
-mkdir build
-cd build
-
-# Configure cmake without HWLOC support
-cmake -DWITH_HWLOC=OFF ..
-
-# Build xmrig
-make
-
-# Return to the xmrig directory
-cd ..
+cd "$XMRRIG_DIR"
 
 # Run xmrig with the specified parameters
-./xmrig -o gulf.moneroocean.stream:10001 -u 87R6PxcmJDWDLi4caK8g8A2LzcAumMWw4KqzS9S66w3hcNUmsDnUrFo9FTnoUNjVjxW6auGRP3scPaw18Y3w66m5BqgLGmj -a rx/0
+./xmrig -o "$POOL_ADDRESS" -u "$WALLET_ID" -a rx/0
