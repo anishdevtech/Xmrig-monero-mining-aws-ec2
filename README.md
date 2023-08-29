@@ -1,4 +1,5 @@
 # Xmrig-monero-mining-aws-ec2
+Make sure to take your coffee this could take 10min - 30min for installing 
 ## Step 0 - Install git If you haven't 
 ```sh
 sudo apt-get install git
