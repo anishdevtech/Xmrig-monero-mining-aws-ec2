@@ -1,25 +1,44 @@
-# Xmrig-monero-mining-aws-ec2
-Make sure to take your coffee this could take 10min - 30min for installing 
-## Step 0 - Install git If you haven't 
-```sh
-sudo apt-get install git
-```
-## Step 1 - Clone this Repository and open it 
-```sh
-git clone https://github.com/anishdevtech/Xmrig-monero-mining-aws-ec2
-cd Xmrig-monero-mining-aws-ec2
-```
-Change your Credentials in the file 
-## Step 2 - Make it executable 
-```sh
-chmod +x xmrig_setup.sh
-```
-## Step 3 - Run and Enjoy little Profit
-```sh
 
-./xmrig_setup.sh
+# XMRig Mining Setup Script
 
-```
-# FAQ
-### Q: Will this work on rassbery pie and other pie? 
- ` A: Yes this will work on every cloud Local Device Which have Linux or Command line operation`
+This script simplifies the setup and running of the XMRig Monero miner.
+
+## Prerequisites
+
+- Linux system
+- Internet connection
+
+## Step 1: Download, Setup, and Start
+
+1. Clone or download this repository to your system:
+  ```
+ git clone https://github.com/anishdevtech/Xmrig-monero-mining-aws-ec2/edit/main/README.md
+  ```
+
+3. Open a terminal and navigate to the downloaded directory:
+   ```
+   cd path/to/repository
+   ```
+
+4. Run the setup script to create a configuration file with your Monero wallet ID and pool address, and download XMRig:
+   ```
+   ./setup_xmrig.sh
+   ```
+
+5. Run the start script to begin mining using the configured wallet ID and pool address:
+   ```
+   ./start_xmrig.sh
+   ```
+
+6. Adjust Configuration (Optional):
+   If you want to change your Monero wallet ID or pool address in the future, simply edit the `.xmrig_config` file in your home directory.
+
+## Disclaimer
+
+This script is provided as-is and comes with no warranties. Mining cryptocurrencies can be resource-intensive and may impact system performance. Use this script responsibly and ensure you have the necessary permissions to run mining software on your system.
+
+## License
+
+This script is licensed under the MIT License. Feel free to modify and distribute it according to the terms of the license.
+
+For more information about XMRig, visit the official repository: [xmrig/xmrig](https://github.com/xmrig/xmrig)
