@@ -1,6 +1,7 @@
 #!/bin/bash
 
-XMRRIG_DIR="$HOME/Downloads/xmrig-6.20.0"
+XMRRIG_VERSION="6.20.0"
+XMRRIG_DIR="$HOME/xmrig-$XMRRIG_VERSION"
 CONFIG_FILE="$HOME/.xmrig_config"
 
 # Check if the config file exists, if not, prompt for values
@@ -14,11 +15,4 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "POOL_ADDRESS=$pool_address" >> "$CONFIG_FILE"
 fi
 
-# Load values from the config file
-source "$CONFIG_FILE"
-
-# Navigate to the xmrig directory
-cd "$XMRRIG_DIR"
-
-# Run xmrig with the specified parameters
-./xmrig -o "$POOL_ADDRESS" -u "$WALLET_ID" -a rx/0
+echo "XMRig setup completed. You can now run './start_xmrig.sh'."
