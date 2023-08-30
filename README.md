@@ -12,22 +12,22 @@ This script simplifies the setup and running of the XMRig Monero miner.
 
 1. Clone or download this repository to your system:
   ```
- git clone https://github.com/anishdevtech/Xmrig-monero-mining-aws-ec2/edit/main/README.md
+ git clone https://github.com/anishdevtech/Xmrig-monero-mining-aws-ec2/
   ```
 
 3. Open a terminal and navigate to the downloaded directory:
    ```
-   cd path/to/repository
+   cd Xmrig-monero-mining-aws-ec2
    ```
 
 4. Run the setup script to create a configuration file with your Monero wallet ID and pool address, and download XMRig:
    ```
-   ./setup_xmrig.sh
+   ./xmrig_setup.sh
    ```
 
 5. Run the start script to begin mining using the configured wallet ID and pool address:
    ```
-   ./start_xmrig.sh
+   ./xmrig_start.sh
    ```
 
 6. Adjust Configuration (Optional):
